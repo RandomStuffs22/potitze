@@ -1,8 +1,5 @@
 {{!< default}}
 
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
-
 {{! The main content area on the homepage }}
 <main class="content" role="main">
 
@@ -10,13 +7,12 @@
     {{#foreach posts}}
 
     <article class="{{post_class}}">
-        <header class="post-header">
-            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="on "}}</span>
-            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-
+        <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
+        <header>
+            <h2><a href="{{url}}">{{{title}}}</a></h2>
         </header>
         <section class="post-excerpt">
-            <p>{{content}}&hellip;</p>
+            {{content words="300"}}
         </section>
     </article>
 

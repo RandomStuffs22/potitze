@@ -1,15 +1,63 @@
+
 body {
   font-family: 'Fanwood Text', serif;
   background: url() top left no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   padding: 5%;
-  background-position: fixed;
 }
+.content {
+	-webkit-column-count: 2;
+	-webkit-column-gap: 20px;
+	-webkit-column-fill: auto;
+	-moz-column-count: 2;
+	-moz-column-gap: 20px;
+	-moz-column-fill: auto;
+	column-count: 2;
+	column-gap: 20px;
+	column-fill: auto;
+}
+
+h1,
+h2.subtitle {
+  color: #FFFFFF;
+}
+
 article.post {
-  float: left;
-  width: 40%;
-  max-width: 400px;
-  min-width: 300px;
-  padding: 10px;
-  margin: 10px;
+  position: relative;
+  width: auto;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  -ms-column-break-inside: avoid;
+  column-break-inside: avoid;
+  margin-bottom: 20px;
+}
+
+article.post img {
+  max-width: 100%;
+}
+
+article.post .post-meta {
+  display: inline-block;
   background: #FFFFFF;
+  padding: .5em 1em;
+}
+
+article.post header,
+article.post .post-excerpt {
+  padding: 10px;
+  background: #FFFFFF;
+}
+
+/*
+  Hides the first image in the first paragraph
+  We will later on extract it with javascript and put it higher up.
+*/
+article.post section p:first-child img:nth-of-type(1) { display: none; }
+
+article.post img.featured {
+  width: 100%;
+  max-width: none;
+
+  margin-bottom: -2.65em
 }
